@@ -1,0 +1,52 @@
+{
+  "name": "serialport",
+  "version": "3.1.2-beta1",
+  "description": "Node.js package to access serial ports. Welcome your robotic javascript overlords. Better yet, program them!",
+  "author": {
+    "name": "Chris Williams",
+    "email": "voodootikigod@gmail.com",
+    "url": "http://www.voodootikigod.com"
+  },
+  "binary": {
+    "module_name": "serialport",
+    "module_path": "build/{configuration}/",
+    "host": "https://github.com/voodootikigod/node-serialport/releases/download/3.1.2-beta1"
+  },
+  "main": "./lib/serialport",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voodootikigod/node-serialport.git"
+  },
+  "keywords": [
+    "serialport",
+    "johnny-five",
+    "serial port",
+    "hardware",
+    "iot",
+    "nodebots"
+  ],
+  "dependencies": {
+    "bindings": "1.2.1",
+    "commander": "^2.9.0",
+    "debug": "^2.1.1",
+    "es6-promise": "^3.1.2",
+    "object.assign": "^4.0.3"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "bin": {
+    "serialportlist": "./bin/serialport-list.js",
+    "serialportterm": "./bin/serialport-terminal.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "rebuild-all": "npm rebuild && node-pre-gyp rebuild",
+    "stress": "mocha --no-timeouts test/arduinoTest/stress.js",
+    "grunt": "grunt",
+    "test": "grunt --verbose",
+    "prepublish": "npm ls"
+  },
+  "gypfile": true
+}
